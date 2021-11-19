@@ -1,14 +1,8 @@
-package bases;
+package domain;
 
-import interfaces.Local;
+public class Restaurante extends Rappi {
+	
 
-public class Supermercado extends Local{
-	
-	
-	public Supermercado() {
-		
-	}
-	
 
 	@Override
 	public void abrirLocal() {

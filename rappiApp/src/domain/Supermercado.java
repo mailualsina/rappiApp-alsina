@@ -1,9 +1,12 @@
-package bases;
+package domain;
 
-import interfaces.Local;
-
-
-public class Licoreria extends Local {
+public class Supermercado extends Rappi{
+	
+	
+	public Supermercado() {
+		
+	}
+	
 
 	@Override
 	public void abrirLocal() {
@@ -16,9 +19,5 @@ public class Licoreria extends Local {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
-
 
 }

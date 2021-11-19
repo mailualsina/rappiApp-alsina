@@ -1,44 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import bases.Licoreria;
-import bases.Restaurante;
-import bases.Supermercado;
-import derivadas.Coto;
-import derivadas.Disco;
-import derivadas.Jumbo;
-import interfaces.Local;
+import domain.Licoreria;
+import domain.Producto;
+import domain.Proveedor;
+import domain.Rappi;
+
 
 public class Principal {
 
 	public static void main(String[] args) {
 		
 		
-		List<Local> locales = new ArrayList<Local>();
+		List<Producto> productos = new ArrayList<Producto>();
 		
-		locales.add(new Supermercado());
-		locales.add(new Restaurante());
-		locales.add(new Licoreria());
+		productos.add(new Producto("Leche", 25, 60));
+		productos.add(new Producto("Pan",30,25));
 		
+		
+		List<Proveedor> proveedores = new ArrayList<Proveedor>();
+
+		proveedores.add(new Proveedor("Coto"));
+		proveedores.add(new Proveedor("Jing A"));
+
 	
-		List<Supermercado> supermercados = new ArrayList<Supermercado>();
-		
-		supermercados.add(new Coto());
-		supermercados.add(new Disco());
-		supermercados.add(new Jumbo());
-		
-		
-		System.out.println((supermercados.get(0)));
-		System.out.println((supermercados.get(1)));
-		System.out.println((supermercados.get(2)));
-
-		for (int i=0 ; i < supermercados.size(); i++) {
-			
-			System.out.println((supermercados.get(i)));
-
-			
-		}
-		
-		
 	}
 }
