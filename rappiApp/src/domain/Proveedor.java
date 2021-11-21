@@ -1,20 +1,23 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 public class Proveedor {
 		
-	private String nombre;
+	
+	protected String nombre;
 	
 	
-	public Proveedor(String nombre) {
+	protected Proveedor(String nombre){
 		
 		this.nombre = nombre;
 		
+	}
+	
+	
+	public String getNombreProveedor() {
+		
+		return nombre;
 		
 	}
 	
-
+	
 }

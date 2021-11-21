@@ -1,18 +1,14 @@
 package domain;
 
-public class Restaurante extends Rappi {
+public class Restaurante extends Proveedor{
 	
-
-
-	@Override
-	public void abrirLocal() {
-		// TODO Auto-generated method stub
+	private String nombre;
+	private double saldo;
+	
+	public Restaurante(String nombre, double saldo) {
 		
-	}
-
-	@Override
-	public void cerrarLocal() {
-		// TODO Auto-generated method stub
+		super(nombre);
+		this.saldo = saldo;
 		
 	}
 
