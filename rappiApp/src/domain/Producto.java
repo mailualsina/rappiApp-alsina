@@ -3,17 +3,32 @@ package domain;
 public class Producto {
 	
 	private String nombre;
-	private int numeroSerie;
 	private double precio;
 	
 	
-	public Producto (String nombre, int numeroSerie, double precio) {
+	public Producto (String nombre, double precio) {
 		
 		this.nombre = nombre;
-		this.numeroSerie = numeroSerie;
 		this.precio = precio;
 		
 	}
+	
+	public String getNombre() {
+		
+		return nombre;
+		
+	}
+	
+	public double getPrecio() {
+		
+		return precio;
+		
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
 	
 
 }

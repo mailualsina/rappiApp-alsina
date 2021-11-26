@@ -1,8 +1,8 @@
 package service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import domain.Producto;
 import domain.Proveedor;
 
 public class PedidoService {
@@ -25,21 +25,21 @@ public class PedidoService {
 		
 		for (int i=0; i < proveedores.size(); i++) {
 			
-			Proveedor p = proveedores.get(i);
+			Proveedor proveedor = proveedores.get(i);
 			
-			if(p.getNombreProveedor().equalsIgnoreCase(nombre)) {
+			if(proveedor.getNombreProveedor().equalsIgnoreCase(nombre)) {
 				
-				System.out.println("Encontré el proveedor " + nombre + " en la posición " + i);
+				System.out.println("El proveedor es " + nombre);
 			} 
 			
 		}
 		
 		
-		for (Proveedor p : proveedores) {
+		for (Proveedor proveedor : proveedores) {
 						
-			if(p.getNombreProveedor().equalsIgnoreCase(nombre)) {
+			if(proveedor.getNombreProveedor().equalsIgnoreCase(nombre)) {
 				
-				System.out.println("Encontré el proveedor " + nombre);
+				System.out.println("El proveedor seleccionado es " + nombre);
 			} 
 			
 		}
@@ -49,10 +49,20 @@ public class PedidoService {
 				
 	
 	
-	public void seleccionarProducto() {
+	public void seleccionarProducto(List<Producto> listaProductos, String nombre) {
 		
-		System.out.println("El producto elegido es ");
-		
+		for (Producto productoActual : listaProductos) {
+			
+			if (productoActual.getNombre().equalsIgnoreCase(nombre)) {
+				
+				System.out.println("El producto seleccionado es " + nombre);
+				
+			}
+			
+		}
 	}
+	
+	
+	
 	
 }
