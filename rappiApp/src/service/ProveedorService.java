@@ -1,7 +1,10 @@
-package domain;
+package service;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import domain.Cliente;
+import domain.Proveedor;
 
 public class ProveedorService {
 	

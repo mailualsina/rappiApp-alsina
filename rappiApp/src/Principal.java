@@ -2,8 +2,7 @@ import domain.Cliente;
 import domain.Pedido;
 import domain.Producto;
 import domain.Proveedor;
-import domain.ProveedorService;
-import service.PedidoService;
+import service.ProveedorService;
 
 
 public class Principal {
@@ -78,74 +77,11 @@ public class Principal {
 		pedido1.cargarProductoAcomprar(productoObtenido5);
 		
 		System.out.println("");
-		System.out.println("A continuación se mostrarán la lista de productos a comprar: ");
+		System.out.println("A continuación se mostrará la lista de productos de tu pedido: ");
 		pedido1.mostrarListaProductos();
 		
 		
-		PedidoService pedidoService = new PedidoService();
-		
-		pedidoService.cargarPedido(pedido1);
-		pedidoService.pagarPedido(1, "tarjeta de crédito");
-		
-		
-		
-		
-		
-		
-		
-		
 
-		
-		//recorrer la lista de proveedores para mostrar todos los proveedores al cliente 
-		//para mostrarle en un menú todos los productos disponibles del proveedor
-		// ahí ese producto lo mando como argumento adentro del pedido
-		
-		//Mostrar los productos que quiero comprar
-		//Cuando elijo el producto que quiero comprar debería llamar al método
-		//productoAcomprar
-		//Circuito: Elijo un producto, ese producto lo tengo que guardar en algún lado
-		//y después se lo paso como argumento a 
-		//Pedido pedido1 = new Pedido(1,"Mailén");
-		//pedido1.cargarProductoAcomprar(ACA PASO el producto);
-		
-		
-		//PedidoService pedidosService= new PedidoService();
-		
-		//Pedido pedido1 = new Pedido(1, "Mailén");
-		//pedido1.cargarProductoAComprar(new Producto("pan"));
-		
-		//Pedido pedido2 = new Pedido(2, "Mailén");
-		//pedido2.cargarProductoAComprar(new Producto("pan"));
-		
-		
-		//pedidoService.cargarPedido(pedido1)
-		//pedidoService.cargarPedido(pedido2)
-		
-		
-		
-		
-		
-
-	
-//		Cliente victoria = new Cliente("Victoria", false, 472, 2000);
-//		
-//		
-//		PedidoService pedido = new PedidoService();
-//		
-//		pedido.seleccionarProveedor(proveedores,"Coto");
-//		pedido.seleccionarProducto(productos, "Pan");
-//		
-//		
-//		PagoService pago = new PagoService();
-//		
-//		pago.pagoPedido(productos, victoria, "Pan");
-//		
-		
-		
-		
-		
-		
-		
 
 		
 	}
