@@ -19,11 +19,22 @@ public class Pedido {
 	}
 	
 	public void cargarProductoAcomprar(Producto producto) {
+				
+				productos.add(producto);
+					
+			}	
+	
+	public void mostrarListaProductos() {
 		
-		productos.add(producto);
+		for(Producto producto: productos) {
+			
+			System.out.println(producto.getNombre());
+			
+		}
 		
 	}
-
+		
+	
 	public int getNumero() {
 		
 		return numero;

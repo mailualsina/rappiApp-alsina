@@ -1,10 +1,8 @@
-import java.util.ArrayList;
-import java.util.List;
-
 import domain.Cliente;
+import domain.Pedido;
 import domain.Producto;
 import domain.Proveedor;
-import domain.Rappi;
+import domain.ProveedorService;
 import service.PedidoService;
 
 
@@ -38,21 +36,59 @@ public class Principal {
 		licoreria.cargarProducto(new Producto("vodka", 1400));
 		
 		
-		Rappi rappi = new Rappi();
+		ProveedorService proveedorService = new ProveedorService();
 		
-		rappi.cargarProveedor(licoreria);
-		rappi.cargarProveedor(supermercado);
-		rappi.cargarProveedor(restaurante);
+		proveedorService.cargarProveedor(licoreria);
+		proveedorService.cargarProveedor(supermercado);
+		proveedorService.cargarProveedor(restaurante);
 		
+		
+		//Cliente Victoria decide comprar en Coto dentro del Pedido 1
 		
 		Cliente victoria = new Cliente("Victoria", false, 123, 2500);
 		
-		rappi.mostrarProveedores();
-		rappi.seleccionarProveedor(victoria, "Coto");
+		proveedorService.mostrarProveedores();
+		Proveedor proveedorSeleccionado = proveedorService.seleccionarProveedor(victoria, "Coto");
+				
+		proveedorSeleccionado.mostrarProductos();
+				
+		Producto productoObtenido1 = proveedorSeleccionado.obtenerProducto("pan");
+		Producto productoObtenido2 = proveedorSeleccionado.obtenerProducto("aceite");
 		
-		//Acá tendría que poner un if para que aparezca el proveedor que seleccionó?
 		
-		supermercado.mostrarProductos();
+		Pedido pedido1 = new Pedido(1, "Victoria");
+		
+		pedido1.cargarProductoAcomprar(productoObtenido1);
+		pedido1.cargarProductoAcomprar(productoObtenido2);
+		
+		//Cliente Victoria decide, ahora, comprar en un restaurante, dentro del mismo
+		//Pedido 1
+
+		proveedorService.mostrarProveedores();
+		Proveedor proveedorSeleccionado2 = proveedorService.seleccionarProveedor(victoria, "Renatto");
+		
+		proveedorSeleccionado2.mostrarProductos();
+		
+		Producto productoObtenido3 = proveedorSeleccionado2.obtenerProducto("ravioles");
+		Producto productoObtenido4 = proveedorSeleccionado2.obtenerProducto("queso rallado");
+		Producto productoObtenido5 = proveedorSeleccionado2.obtenerProducto("fideos");
+
+		pedido1.cargarProductoAcomprar(productoObtenido3);
+		pedido1.cargarProductoAcomprar(productoObtenido4);
+		pedido1.cargarProductoAcomprar(productoObtenido5);
+		
+		System.out.println("");
+		System.out.println("A continuación se mostrarán la lista de productos a comprar: ");
+		pedido1.mostrarListaProductos();
+		
+		
+		PedidoService pedidoService = new PedidoService();
+		
+		pedidoService.cargarPedido(pedido1);
+		pedidoService.pagarPedido(1, "tarjeta de crédito");
+		
+		
+		
 		
 		
 		

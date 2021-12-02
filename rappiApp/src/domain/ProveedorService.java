@@ -3,7 +3,8 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rappi {
+public class ProveedorService {
+	
 	
 	
 	private List<Proveedor> proveedores = new ArrayList<Proveedor>();
@@ -29,7 +30,7 @@ public class Rappi {
 		
 	}
 	
-	public void seleccionarProveedor(Cliente cliente, String nombreProveedor) {
+	public Proveedor seleccionarProveedor(Cliente cliente, String nombreProveedor) {
 		
 		for(Proveedor proveedor : proveedores) {
 			
@@ -37,9 +38,11 @@ public class Rappi {
 				
 				System.out.println("El proveedor seleccionado es " + nombreProveedor);
 			
+				return proveedor;
 		}
 		
 	}
+		return null;
 	
 	}
 	

@@ -12,7 +12,7 @@ public class PedidoService {
 	
 	
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
-	
+	//lista de clientes acá
 	
 	public void cargarPedido(Pedido pedido) {
 
@@ -20,16 +20,22 @@ public class PedidoService {
 		
 	}
 	
-	//acá lo ideal sería pasarle el número de pedido y todo el pedido
+	
+	//chequear si el getNombre cliente es el mismo cliente que me pasa
+	//falta hacer lo del saldo con el Cliente cliente
 	public void pagarPedido(int numeroPedido, String medioDePago) {
 		
 		for (Pedido pedido : pedidos) {
 			
-			if (pedido.getNumero() == numeroPedido) {
+			if (pedido.getNumero() == numeroPedido ) {
 				
 					pedido.setMedioDePago(medioDePago);	
 					
+			System.out.println("Su pedido se ha pagado correctamente con el medio de pago " + medioDePago);
+					
 			}
+		
+			
 			
 		}
 		

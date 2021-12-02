@@ -37,6 +37,22 @@ public class Proveedor {
 		
 	}
 	
+	
+	public Producto obtenerProducto(String nombre) {
+			
+			for(Producto producto: productos) {
+				
+				if(producto.getNombre().equalsIgnoreCase(nombre)) {
+					
+					return producto;
+				} 
+				
+			}
+			
+			return null;
+	}
+		
+	
 	public void cargarProducto(Producto producto) {
 		
 		productos.add(producto);
