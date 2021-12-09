@@ -83,25 +83,13 @@ public class Principal {
 		pedido1.mostrarListaProductos();
 		
 		
-		//ACA EMPIEZA LO NUEVO
+		//ACA EMPIEZA LO AGREGADO PARA EL FINAL
 		
 		PedidoService pedidoService = new PedidoService();
 		
 		pedidoService.cargarPedido(pedido1, victoria);
-		
-		pedido1.calcularPrecioTotalProductosPedido();
-		
-		//pedidoService.pagarPedido(pedido1, victoria);
-		
-		pedidoService.obtenerClienteDelPedido(1);
-		
-		
-		pedidoService.pagarPedido(1);
-		//Cliente Benjamin = new Cliente("Benjamin", false, 123, 2500);
+		pedidoService.pagarPedido(1, "Tajeta");
 
-		
-		
-		//envioService.enviarPedido(pedido1,)
 		
 	}
 }

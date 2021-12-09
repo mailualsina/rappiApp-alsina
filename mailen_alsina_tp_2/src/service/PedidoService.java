@@ -35,9 +35,7 @@ public class PedidoService {
 					Cliente cliente = clientes.get(j);
 					
 					if (cliente.getNombre() == pedido.getNombreCliente()) {
-						
-						System.out.println(cliente.getNombre());
-
+					
 						return cliente;
 						
 					}	
@@ -67,7 +65,7 @@ public class PedidoService {
 	
 	
 	
-	public void pagarPedido(int numeroPerdido) {
+	public void pagarPedido(int numeroPerdido, String medioDePago) {
 		
 		Pedido pedido = obtenerPedido(numeroPerdido);
 		Cliente cliente = this.obtenerClienteDelPedido(numeroPerdido);
@@ -79,73 +77,14 @@ public class PedidoService {
 		cliente.setSaldo(cliente.getSaldo() - valorApagar);
 		
 		double saldoClienteActual = cliente.getSaldo();
+		pedido.setMedioDePago(medioDePago);
 		
 		System.out.println("Usted, " + cliente.getNombre() 
 		+ ", ha pagado una suma de " + valorApagar 
-				+   ". Su saldo, actual es: " + saldoClienteActual);
+				+ ", con el método de pago " + medioDePago + ". Su saldo, actual es: " 
+		+ saldoClienteActual);	
 		
 	}
-	
-	
-	
-	
-	
-//	public void pagarPedido2(Pedido pedido, String metodoPago) {
-//		
-//		Cliente clie;
-//		
-//		clie = buscarClientePorPedido(pedido);
-//	}
-	
-	
-	public void pagarPedido(Pedido pedido, Cliente cliente) {
-		
-		pedido.calcularPrecioTotalProductosPedido();
-		
-		double valorApagar = pedido.calcularPrecioTotalProductosPedido();
-
-		cliente.setSaldo(cliente.getSaldo() - valorApagar);
-		
-		double saldoClienteActual = cliente.getSaldo();
-		
-		System.out.println("Usted, " + cliente.getNombre() 
-		+ ", ha pagado una suma de " + valorApagar 
-				+   ". Su saldo, actual es: " + saldoClienteActual);
-		
-	}	
-	
-	
-		
-		
-		
-		
-	
-		
-//		for (int i=0 ; i < pedidos.size() ; i++) {
-//			
-//			System.out.println((pedidos.get(i)));
-//			
-			
-			
-//			if (pedidos.get(i) == numeroPedido) {
-//				
-//			}
-		
-		
-		
-		
-		
-			
-			
-//			if (pedido.getNumero() == numeroPedido ) {
-//				
-//					pedido.setMedioDePago(medioDePago);	
-//					
-//			System.out.println("Su pedido se ha pagado correctamente con el medio de pago " + medioDePago);
-						
-		
-	
-	
 	
 	
 }
