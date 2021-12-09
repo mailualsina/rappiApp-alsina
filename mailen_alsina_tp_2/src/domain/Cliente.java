@@ -16,27 +16,30 @@ public class Cliente {
 		this.saldo = saldo;
 		
 	}
-	
-	public String getNombre() {
-		
-		return nombre;
-		
-	}
-	
+
+
 	public double getSaldo() {
-		
 		return saldo;
-		
 	}
-	
-	public boolean getEsPlanPremium() {
-		
-		return esPlanPremium;
-		
-	}
+
 
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	
+
+	
 	
 }

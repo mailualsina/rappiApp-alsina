@@ -1,7 +1,9 @@
 import domain.Cliente;
+import domain.Mensajero;
 import domain.Pedido;
 import domain.Producto;
 import domain.Proveedor;
+import service.PedidoService;
 import service.ProveedorService;
 
 
@@ -81,8 +83,25 @@ public class Principal {
 		pedido1.mostrarListaProductos();
 		
 		
+		//ACA EMPIEZA LO NUEVO
+		
+		PedidoService pedidoService = new PedidoService();
+		
+		pedidoService.cargarPedido(pedido1, victoria);
+		
+		pedido1.calcularPrecioTotalProductosPedido();
+		
+		//pedidoService.pagarPedido(pedido1, victoria);
+		
+		pedidoService.obtenerClienteDelPedido(1);
+		
+		
+		pedidoService.pagarPedido(1);
+		//Cliente Benjamin = new Cliente("Benjamin", false, 123, 2500);
 
-
+		
+		
+		//envioService.enviarPedido(pedido1,)
 		
 	}
 }

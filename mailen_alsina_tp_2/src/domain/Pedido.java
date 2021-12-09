@@ -35,6 +35,32 @@ public class Pedido {
 	}
 		
 	
+	public double calcularPrecioTotalProductosPedido() {
+		
+		double totalPrecioProductos = 0;
+		for(Producto producto: productos) {
+			
+			//System.out.println(producto.getPrecio());
+			
+			double precioProducto = producto.getPrecio();
+			totalPrecioProductos = totalPrecioProductos + precioProducto;
+				
+		}
+//		System.out.println("ES EL TOTAL:");
+//		System.out.println(totalPrecioProductos);
+		return totalPrecioProductos;
+		
+	}
+	
+	
+	
+	public String getNombreCliente() {
+		
+		return nombreCliente;
+		
+	}
+	
+	
 	public int getNumero() {
 		
 		return numero;
