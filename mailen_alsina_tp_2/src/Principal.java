@@ -1,4 +1,5 @@
 import domain.Cliente;
+import domain.Envio;
 import domain.Mensajero;
 import domain.Pedido;
 import domain.Producto;
@@ -85,21 +86,32 @@ public class Principal {
 		
 		
 		//ACA EMPIEZA LO AGREGADO PARA EL FINAL
+		//Pago y envío del pedido1
 		
 		PedidoService pedidoService = new PedidoService();
 		
 		
 		pedidoService.cargarPedido(pedido1, victoria);
-		
-		boolean pedidoPagado1 = pedidoService.pagarPedido(1, "Tajeta");
+		pedidoService.pagarPedido(1, "Tajeta");
 
+		
+		Mensajero mariano = new Mensajero("Mariano", 3000);
+			
+		
+		Envio envio1 = new Envio(1, "Mariano");
+		
 		
 		EnvioService envioService = new EnvioService();
 		
+		envioService.cargarEnvio(envio1, mariano);
+		envioService.hacerEnvio(1);
 		
 		
 		
-
+		
+		
 		
 	}
+	
+	
 }

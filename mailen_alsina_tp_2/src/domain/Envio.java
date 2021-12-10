@@ -5,15 +5,34 @@ import java.util.List;
 
 public class Envio {
 	
+	private int numero;
 	private String nombreMensajero;
-	private int numeroPedido;
 	
-	public Envio(String nombreMensajero, int numeroPedido) {
+	
+	public Envio(int numero, String nombreMensajero) {
 		
+		this.numero = numero;
 		this.nombreMensajero = nombreMensajero;
-		this.numeroPedido = numeroPedido;
 		
 	}
+
+
+	public int getNumero() {
+		return numero;
+	}
+
+
+	public String getNombreMensajero() {
+		return nombreMensajero;
+	}
+
+
+
+
+
+	
+
+
 		
 	
 

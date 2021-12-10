@@ -12,7 +12,6 @@ public class PedidoService {
 	
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
 	private List<Cliente> clientes =new ArrayList<Cliente>();
-	private List<Pedido> pedidosPagados = new ArrayList<Pedido>();
 	
 	public void cargarPedido(Pedido pedido, Cliente cliente) {
 
@@ -67,7 +66,7 @@ public class PedidoService {
 		Cliente cliente = obtenerCliente(pedido.getNombreCliente());
 		
 		
-		double valorApagar = pedido.calcularPrecioTotalProductosPedido();
+		double valorApagar = pedido.PrecioTotalProductosPedido();
 		
 		if (cliente.getSaldo() >= valorApagar) {
 			
@@ -76,13 +75,11 @@ public class PedidoService {
 			pedido.setMedioDePago(medioDePago);
 			double saldoClienteActual = cliente.getSaldo();
 			
-			System.out.println("Usted, " + cliente.getNombre() 
-		+ ", ha pagado una suma de " + valorApagar 
-				+ ", con el método de pago " + medioDePago + ". Su saldo, actual es: " 
-		+ saldoClienteActual);	
-			
-			pedidosPagados.add(pedido);
-			
+			System.out.println("Usted, " + cliente.getNombre() +
+					", ha pagado una suma de " + valorApagar +
+					", con el método de pago " + medioDePago +
+					". Su saldo, actual es: " + saldoClienteActual);	
+						
 			pedidoPagado = true;
 						
 		}

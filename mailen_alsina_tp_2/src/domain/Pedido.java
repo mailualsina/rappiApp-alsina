@@ -20,9 +20,9 @@ public class Pedido {
 	
 	public void cargarProductoAComprar(Producto producto) {
 				
-				productos.add(producto);
+		productos.add(producto);
 					
-			}	
+	}	
 	
 	public void mostrarListaProductos() {
 		
@@ -35,7 +35,7 @@ public class Pedido {
 	}
 		
 	
-	public double calcularPrecioTotalProductosPedido() {
+	public double PrecioTotalProductosPedido() {
 		
 		double totalPrecioProductos = 0;
 		for(Producto producto: productos) {
