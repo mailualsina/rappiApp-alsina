@@ -3,6 +3,7 @@ import domain.Mensajero;
 import domain.Pedido;
 import domain.Producto;
 import domain.Proveedor;
+import service.EnvioService;
 import service.PedidoService;
 import service.ProveedorService;
 
@@ -59,8 +60,8 @@ public class Principal {
 		
 		Pedido pedido1 = new Pedido(1, "Victoria");
 		
-		pedido1.cargarProductoAcomprar(productoObtenido1);
-		pedido1.cargarProductoAcomprar(productoObtenido2);
+		pedido1.cargarProductoAComprar(productoObtenido1);
+		pedido1.cargarProductoAComprar(productoObtenido2);
 		
 		//Cliente Victoria decide, ahora, comprar en un restaurante, dentro del mismo
 		//Pedido 1
@@ -74,9 +75,9 @@ public class Principal {
 		Producto productoObtenido4 = proveedorSeleccionado2.obtenerProducto("queso rallado");
 		Producto productoObtenido5 = proveedorSeleccionado2.obtenerProducto("fideos");
 
-		pedido1.cargarProductoAcomprar(productoObtenido3);
-		pedido1.cargarProductoAcomprar(productoObtenido4);
-		pedido1.cargarProductoAcomprar(productoObtenido5);
+		pedido1.cargarProductoAComprar(productoObtenido3);
+		pedido1.cargarProductoAComprar(productoObtenido4);
+		pedido1.cargarProductoAComprar(productoObtenido5);
 		
 		System.out.println("");
 		System.out.println("A continuación se mostrará la lista de productos de tu pedido: ");
@@ -87,8 +88,17 @@ public class Principal {
 		
 		PedidoService pedidoService = new PedidoService();
 		
+		
 		pedidoService.cargarPedido(pedido1, victoria);
-		pedidoService.pagarPedido(1, "Tajeta");
+		
+		boolean pedidoPagado1 = pedidoService.pagarPedido(1, "Tajeta");
+
+		
+		EnvioService envioService = new EnvioService();
+		
+		
+		
+		
 
 		
 	}

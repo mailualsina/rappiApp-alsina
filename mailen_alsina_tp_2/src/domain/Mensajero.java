@@ -6,7 +6,7 @@ import java.util.List;
 public class Mensajero {
 	
 	private String nombre;
-	private boolean estaDisponible;
+	private double saldo;
 	
 	
 	

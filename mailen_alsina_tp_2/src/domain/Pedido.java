@@ -18,7 +18,7 @@ public class Pedido {
 
 	}
 	
-	public void cargarProductoAcomprar(Producto producto) {
+	public void cargarProductoAComprar(Producto producto) {
 				
 				productos.add(producto);
 					
@@ -67,6 +67,7 @@ public class Pedido {
 		this.medioDePago = medioDePago;
 		
 	}
+
 	
 	
 }
